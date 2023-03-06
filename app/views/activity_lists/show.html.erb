@@ -1,0 +1,79 @@
+<div class="my-navbar">
+  <%= link_to activity_list_path(@activity_list), class: "my-navbar-box-current" do %>
+      ALL
+  <% end %>
+  <%= link_to activity_list_runnings_path(@activity_list), class: "my-navbar-box" do %>
+    RUNNING
+  <% end %>
+  <%= link_to activity_list_winter_sports_path(@activity_list), class: "my-navbar-box" do %>
+    WINTER SPORT
+  <% end %>
+  <%= link_to activity_list_cyclings_path(@activity_list), class: "my-navbar-box" do %>
+    CYCLING
+  <% end %>
+  <%= link_to activity_list_swimmings_path(@activity_list), class: "my-navbar-box" do %>
+    SWIMMING
+  <% end %>
+  <%= link_to activity_list_walkings_path(@activity_list), class: "my-navbar-box" do %>
+    WALKING
+  <% end %>
+  <%= link_to coustom_path(@activity_list), class: "my-navbar-box" do %>
+    PROFILE
+  <% end %>
+</div>
+<div class="my-body">
+  <div class="my-container">
+    <% @all_activities.each do |activity| %>
+      <% if activity.class == Running %>
+        <div class="activity-card">
+          <%= link_to activity_list_running_path(@activity_list, activity) do%>
+            <%= render "activity", activity: activity %>
+            <%= link_to running_path(activity), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-ring" do %>
+              <i class="fa-solid fa-xmark"></i>
+            <% end %>
+          <% end %>
+        </div>
+
+      <% elsif activity.class == WinterSport %>
+        <div class="activity-card">
+          <%= link_to activity_list_winter_sport_path(@activity_list, activity) do %>
+            <%= render "activity", activity: activity %>
+          <% end %>
+          <%= link_to winter_sport_path(activity), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-ring" do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
+
+      <% elsif activity.class == Cycling %>
+        <div class="activity-card">
+          <%= link_to activity_list_cycling_path(@activity_list, activity) do %>
+            <%= render "activity", activity: activity %>
+          <% end %>
+          <%= link_to cycling_path(activity), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-ring" do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
+
+      <% elsif activity.class == Swimming %>
+        <div class="activity-card">
+          <%= link_to activity_list_swimming_path(@activity_list, activity) do %>
+            <%= render "activity", activity: activity %>
+          <% end %>
+          <%= link_to swimming_path(activity), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-ring" do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
+
+      <% elsif activity.class == Walking %>
+        <div class="activity-card">
+          <%= link_to activity_list_walking_path(@activity_list, activity) do %>
+            <%= render "activity", activity: activity %>
+          <% end %>
+          <%= link_to walking_path(activity), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-ring" do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

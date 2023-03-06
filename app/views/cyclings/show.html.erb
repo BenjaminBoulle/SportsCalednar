@@ -1,0 +1,56 @@
+<div class="my-navbar">
+  <%= link_to activity_list_path(@activity_list), class:"my-navbar-box" do %>
+      ALL
+  <% end %>
+  <%= link_to activity_list_runnings_path(@activity_list), class:"my-navbar-box" do %>
+    RUNNING
+  <% end %>
+  <%= link_to activity_list_winter_sports_path(@activity_list), class:"my-navbar-box" do %>
+    WINTER SPORT
+  <% end %>
+  <%= link_to activity_list_cyclings_path(@activity_list), class:"my-navbar-box-current" do %>
+    CYCLING
+  <% end %>
+  <%= link_to activity_list_swimmings_path(@activity_list), class:"my-navbar-box" do %>
+    SWIMMING
+  <% end %>
+  <%= link_to activity_list_walkings_path(@activity_list), class:"my-navbar-box" do %>
+    WALKING
+  <% end %>
+  <%= link_to coustom_path(@activity_list), class:"my-navbar-box" do %>
+    PROFILE
+  <% end %>
+</div>
+<h1> <%= @cycling.name %> </h1>
+<div class="d-flex">
+  <div>
+    <%= cl_image_tag @cycling.photo.key, height:300, width: 300, crop: :fill %>
+  </div>
+  <% minutes = @cycling.time.to_i.divmod(60) %>
+  <% hours = minutes[0].divmod(60) %>
+  <% if hours[0] == 0 %>
+    <% activity_time = "#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+  <% else %>
+    <% activity_time = "#{hours[0]}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+  <% end %>
+  <div>
+    <p> Name: <%= @cycling.name %> </p>
+    <p> Time: <%= activity_time %> </p>
+    <p> Distance: <%= @cycling.distance %> km </p>
+    <p> Ran with <%= @cycling.friends %> on <%= @cycling.date %> </p>
+  </div>
+  <div>
+    <p> Average speed: <%= @cycling.avg_speed %> km/h</p>
+    <p> Maximum speed: <%= @cycling.max_speed %> km/h </p>
+    <p> Average heart rate: <%= @cycling.avg_heart_rate %> Bpm </p>
+    <p> Maximum heart rate: <%= @cycling.max_heart_rate %> Bpm </p>
+    <p> Elevation gain: <%= @cycling.elevation_gain %> m </p>
+    <p> Maximum elevation: <%= @cycling.max_elevation %> m </p>
+  </div>
+</div>
+<%= link_to edit_activity_list_cycling_path(@activity_list, @cycling) do %>
+  EDIT
+<% end %>
+<%= link_to activity_list_path(@activity_list) do %>
+  go back in time
+<% end %>

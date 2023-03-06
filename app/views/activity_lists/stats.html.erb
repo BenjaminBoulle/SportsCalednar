@@ -1,0 +1,26 @@
+<div class="my-navbar">
+  <%= link_to activity_list_path(@activity_list), class:"my-navbar-box" do %>
+      ALL
+  <% end %>
+  <%= link_to activity_list_runnings_path(@activity_list), class:"my-navbar-box" do %>
+    RUNNING
+  <% end %>
+  <%= link_to activity_list_winter_sports_path(@activity_list), class:"my-navbar-box" do %>
+    WINTER SPORT
+  <% end %>
+  <%= link_to activity_list_cyclings_path(@activity_list), class:"my-navbar-box" do %>
+    CYCLING
+  <% end %>
+  <%= link_to activity_list_swimmings_path(@activity_list), class:"my-navbar-box" do %>
+    SWIMMING
+  <% end %>
+  <%= link_to activity_list_walkings_path(@activity_list), class:"my-navbar-box" do %>
+    WALKING
+  <% end %>
+  <%= link_to coustom_path(@activity_list), class:"my-navbar-box-current" do %>
+    PROFILE
+  <% end %>
+</div>
+
+
+<%= cl_image_tag current_user.photo.key, height:300, width: 300, crop: :fill %>

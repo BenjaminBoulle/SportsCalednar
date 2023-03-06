@@ -1,0 +1,50 @@
+<%= link_to activity_list_path(@activity_list) do %>
+    ALL
+<% end %>
+<%= link_to activity_list_runnings_path(@activity_list) do %>
+  RUNNING
+<% end %>
+<%= link_to activity_list_winter_sports_path(@activity_list) do %>
+  WINTER SPORT
+<% end %>
+<%= link_to activity_list_cyclings_path(@activity_list) do %>
+  CYCLING
+<% end %>
+<%= link_to activity_list_swimmings_path(@activity_list) do %>
+  SWIMMING
+<% end %>
+<%= link_to activity_list_walkings_path(@activity_list) do %>
+  WALKING
+<% end %>
+<% minutes = @winter_sport.time.to_i.divmod(60) %>
+<% hours = minutes[0].divmod(60) %>
+<%= simple_form_for [@activity_list, @winter_sport] do |f| %>
+  <%= f.input :name, label: false %>
+  <div class="d-flex">
+    <%= f.input :hours, label: false, input_html: {value: hours[0]} %>  h
+    <%= f.input :minutes, label: false, input_html: {value: format('%02d', hours[1])} %>  min
+    <%= f.input :seconds, label: false, input_html: {value: format('%02d', minutes[1])} %>  sec
+  </div>
+  <div class="d-flex">
+    <%= f.input :distance, placeholder: "Distance", label: false %>  km
+  </div>
+  <div class="d-flex">
+    <%= f.input :avg_heart_rate, placeholder: "Average heart rate", label: false %> Bpm
+  </div>
+  <div class="d-flex">
+    <%= f.input :max_heart_rate, placeholder: "Maximum heart rate", label: false %> Bpm
+  </div>
+  <div class="d-flex">
+   <%= f.input :max_speed, placeholder: "Maximum speed",label: false %> km/h
+  </div>
+  <div class="d-flex">
+   <%= f.input :elevation_gain, placeholder: "Elevation gain", label: false %> m
+  </div>
+  <div class="d-flex">
+   <%= f.input :max_elevation, placeholder: "Maximum elevation", label: false %> m
+  </div>
+  <%= f.input :friends, collection: ["Charlotte", "Rodrigue", "Lisa"], label: false %>
+  <%= f.input :date %>
+  <%= f.input :photo, as: :file %>
+  <%= f.button :submit %>
+<% end %>

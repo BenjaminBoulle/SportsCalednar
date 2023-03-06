@@ -1,0 +1,60 @@
+<div class="my-navbar">
+  <%= link_to activity_list_path(@activity_list), class:"my-navbar-box" do %>
+      ALL
+  <% end %>
+  <%= link_to activity_list_runnings_path(@activity_list), class:"my-navbar-box" do %>
+    RUNNING
+  <% end %>
+  <%= link_to activity_list_winter_sports_path(@activity_list), class:"my-navbar-box" do %>
+    WINTER SPORT
+  <% end %>
+  <%= link_to activity_list_cyclings_path(@activity_list), class:"my-navbar-box" do %>
+    CYCLING
+  <% end %>
+  <%= link_to activity_list_swimmings_path(@activity_list), class:"my-navbar-box" do %>
+    SWIMMING
+  <% end %>
+  <%= link_to activity_list_walkings_path(@activity_list), class:"my-navbar-box-current" do %>
+    WALKING
+  <% end %>
+  <%= link_to coustom_path(@activity_list), class:"my-navbar-box" do %>
+    PROFILE
+  <% end %>
+</div>
+<div class="my-body">
+  <div class="my-container">
+    <%= link_to new_activity_list_walking_path(@activity_list), class:"add_activity"  do %>
+      Add a Walking Activity
+    <% end %>
+    <% @walkings.each do |walking| %>
+      <div class="activity-card">
+        <%= link_to activity_list_walking_path(@activity_list, walking) do %>
+          <div class="activity-card-info">
+            <% minutes = walking.time.to_i.divmod(60) %>
+            <% hours = minutes[0].divmod(60) %>
+            <% if hours[0] == 0 %>
+              <% activity_time = "#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+            <% else %>
+              <% activity_time = "#{hours[0]}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+            <% end %>
+            <div class="activity-card-info-picture">
+              <%= cl_image_tag walking.photo.key, height:230, width: 230, crop: :fill %>
+            </div>
+            <div class="activity-card-info-text">
+              <div class="text"> Name: <%= walking.name %> </div>
+              <div class="text"> Time: <%= activity_time %> </div>
+              <div class="text"> Distance: <%= walking.distance %> km </div>
+              <div class="text"> Date: <%= walking.date %> </div>
+            </div>
+          </div>
+          <%= link_to walking_path(walking), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "delete-ring"  do %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
+        <% end %>
+      </div>
+    <% end %>
+    <%= link_to new_activity_list_walking_path(@activity_list), class:"add_activity"  do %>
+      Add a Walking Activity
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,56 @@
+<div class="my-navbar">
+  <%= link_to activity_list_path(@activity_list), class:"my-navbar-box" do %>
+      ALL
+  <% end %>
+  <%= link_to activity_list_runnings_path(@activity_list), class:"my-navbar-box" do %>
+    RUNNING
+  <% end %>
+  <%= link_to activity_list_winter_sports_path(@activity_list), class:"my-navbar-box-current"  do %>
+    WINTER SPORT
+  <% end %>
+  <%= link_to activity_list_cyclings_path(@activity_list), class:"my-navbar-box" do %>
+    CYCLING
+  <% end %>
+  <%= link_to activity_list_swimmings_path(@activity_list), class:"my-navbar-box" do %>
+    SWIMMING
+  <% end %>
+  <%= link_to activity_list_walkings_path(@activity_list), class:"my-navbar-box" do %>
+    WALKING
+  <% end %>
+  <%= link_to coustom_path(@activity_list), class:"my-navbar-box" do %>
+    PROFILE
+  <% end %>
+</div>
+<h1> <%= @winter_sport.name %> </h1>
+<div class="d-flex">
+  <div>
+    <%= cl_image_tag @winter_sport.photo.key, height:300, width: 300, crop: :fill %>
+  </div>
+  <% minutes = @winter_sport.time.to_i.divmod(60) %>
+  <% hours = minutes[0].divmod(60) %>
+  <% if hours[0] == 0 %>
+    <% activity_time = "#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+  <% else %>
+    <% activity_time = "#{hours[0]}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+  <% end %>
+  <div>
+    <p> Name: <%= @winter_sport.name %> </p>
+    <p> Time: <%= activity_time %> </p>
+    <p> Distance: <%= @winter_sport.distance %> km </p>
+    <p> Ran with <%= @winter_sport.friends %> on <%= @winter_sport.date %> </p>
+  </div>
+  <div>
+    <p> Average speed: <%= @winter_sport.avg_speed %> km/h</p>
+    <p> Maximum speed: <%= @winter_sport.max_speed %> km/h </p>
+    <p> Average heart rate: <%= @winter_sport.avg_heart_rate %> Bpm </p>
+    <p> Maximum heart rate: <%= @winter_sport.max_heart_rate %> Bpm </p>
+    <p> Elevation gain: <%= @winter_sport.elevation_gain %> m </p>
+    <p> Maximum elevation: <%= @winter_sport.max_elevation %> m </p>
+  </div>
+</div>
+<%= link_to edit_activity_list_winter_sport_path(@activity_list, @winter_sport) do %>
+  EDIT
+<% end %>
+<%= link_to activity_list_path(@activity_list) do %>
+  go back in time
+<% end %>
