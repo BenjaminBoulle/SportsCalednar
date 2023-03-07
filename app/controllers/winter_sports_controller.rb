@@ -1,3 +1,4 @@
+require "open-uri"
 class WinterSportsController < ApplicationController
   def index
     @winter_sports = WinterSport.where(activity_list: params[:activity_list_id]).order(date: :desc)

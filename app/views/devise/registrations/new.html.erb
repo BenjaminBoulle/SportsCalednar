@@ -5,41 +5,70 @@
 
   <div class="form-inputs">
     <%= f.input :first_name,
-                    label: false,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "first_name" },
-                    placeholder: "First name" %>
+                label: false,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "first_name" },
+                placeholder: "First name" %>
 
-        <%= f.input :last_name,
-                    label: false,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "last_name" },
-                    placeholder: "Last name"%>
+    <%= f.input :last_name,
+                label: false,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "last_name" },
+                placeholder: "Last name"%>
 
-        <%= f.input :email,
-                    label: false,
-                    label: false,
-                    required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email" },
-                    placeholder: "Email"%>
+    <%= f.input :email,
+                label: false,
+                label: false,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "email" },
+                placeholder: "Email"%>
 
-        <%= f.input :password,
-                    label: false,
-                    required: true,
-                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" },
-                    placeholder: "Password" %>
+    <%= f.input :age,
+                label: false,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "age" },
+                placeholder: "Age"%>
 
-        <%= f.input :password_confirmation,
-                    label: false,
-                    required: true,
-                    input_html: { autocomplete: "new-password" },
-                    placeholder: "Password confirmation" %>
+    <%= f.input :height,
+                label: false,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "height" },
+                placeholder: "Height (in cm)"%>
 
-        <%= f.input :photo, as: :file, required: true, autofocus: true %>
+    <%= f.input :weight,
+                label: false,
+                required: true,
+                autofocus: true,
+                input_html: { autocomplete: "weight" },
+                placeholder: "Weight (in kg)"%>
+
+    <%= f.input :gender,
+                label: "gender",
+                required: true,
+                autofocus: true,
+                collection: ["Male", "Female", "Prefer not to answer"],
+                input_html: { autocomplete: "gender" },
+                placeholder: "Gender"%>
+
+    <%= f.input :password,
+                label: false,
+                required: true,
+                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                input_html: { autocomplete: "new-password" },
+                placeholder: "Password" %>
+
+    <%= f.input :password_confirmation,
+                label: false,
+                required: true,
+                input_html: { autocomplete: "new-password" },
+                placeholder: "Password confirmation" %>
+
+    <%= f.input :photo, as: :file, required: true, autofocus: true %>
   </div>
 
   <div class="form-actions">

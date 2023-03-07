@@ -21,39 +21,53 @@
     PROFILE
   <% end %>
 </div>
-<h1> <%= @running.name %> </h1>
-<div class="d-flex">
-  <div>
-    <%= cl_image_tag @running.photo.key, height:300, width: 300, crop: :fill %>
-  </div>
-  <% minutes = @running.time.to_i.divmod(60) %>
-  <% hours = minutes[0].divmod(60) %>
-  <% if hours[0] == 0 %>
-    <% activity_time = "#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
-  <% else %>
-    <% activity_time = "#{hours[0]}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
-  <% end %>
-  <% minutes_pace = @running.avg_pace.divmod(60) %>
-  <% activity_avg_pace = "#{minutes_pace[0]}:#{format('%02d', minutes_pace[1])}" %>
-  <div>
-    <p> Name: <%= @running.name %> </p>
-    <p> Time: <%= activity_time %> </p>
-    <p> Distance: <%= @running.distance %> km </p>
-    <p> Ran on <%= @running.date %> </p>
-    <p> Ran with <%= @running.friends %> </p>
-  </div>
-  <div>
-    <p> Average pace: <%= activity_avg_pace %> /km </p>
-    <p> Average speed: <%= @running.avg_speed %> km/h</p>
-    <p> Maximum speed: <%= @running.max_speed %> km/h </p>
-    <p> Average heart rate: <%= @running.avg_heart_rate %> Bpm </p>
-    <p> Maximum heart rate: <%= @running.max_heart_rate %> Bpm </p>
-    <p> Elevation gain: <%= @running.elevation_gain %> m </p>
+<div class="my-body-show">
+  <div class="my-container-show">
+    <div class="activity-card-show">
+      <% minutes = @running.time.to_i.divmod(60) %>
+      <% hours = minutes[0].divmod(60) %>
+      <% if hours[0] == 0 %>
+        <% activity_time = "#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+      <% else %>
+        <% activity_time = "#{hours[0]}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+      <% end %>
+      <% minutes_pace = @running.avg_pace.divmod(60) %>
+      <% activity_avg_pace = "#{minutes_pace[0]}:#{format('%02d', minutes_pace[1])}" %>
+      <div class="activity-card-show-info">
+        <div class="activity-card-show-info-picture">
+          <%= cl_image_tag @running.photo.key, height:400, width: 400, crop: :fill %>
+        </div>
+        <div class="activity-card-show-info-text-one">
+          <div class="text"> Name: <%= @running.name %> </div>
+          <div class="text"> Time: <%= activity_time %> </div>
+          <div class="text"> Distance: <%= @running.distance %> km </div>
+          <div class="text"> Elevation gain: <%= @running.elevation_gain %> m </div>
+          <div class="text"> Date: <%= @running.date %> </div>
+          <% if @running.friends == "" %>
+            <div class="text"> Ran alone </div>
+          <% else %>
+            <div class="text"> Ran with <%= @running.friends %> </div>
+          <% end %>
+        </div>
+        <div class="activity-card-show-info-text-two">
+          <div class="text"> Average pace: <%= activity_avg_pace %> /km </div>
+          <div class="text"> Average speed: <%= @running.avg_speed %> km/h</div>
+          <div class="text"> Maximum speed: <%= @running.max_speed %> km/h </div>
+          <div class="text"> Average heart rate: <%= @running.avg_heart_rate %> Bpm </div>
+          <div class="text"> Maximum heart rate: <%= @running.max_heart_rate %> Bpm </div>
+        </div>
+      </div>
+      <%= link_to edit_activity_list_running_path(@activity_list, @running), class:"edit-activity" do %>
+        <i class="fa-regular fa-pen-to-square"></i>
+      <% end %>
+    </div>
   </div>
 </div>
-<%= link_to edit_activity_list_running_path(@activity_list, @running) do %>
-  EDIT
-<% end %>
-<%= link_to activity_list_path(@activity_list) do %>
-  go back in time
-<% end %>
+<div class="my-footer">
+  <%= link_to activity_list_path(@activity_list), class:"my-footer-app-name" do %>
+    SPORT CALENDAR
+  <% end %>
+  <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class:"my-footer-log-out" do %>
+    LOG OUT
+  <% end %>
+</div>

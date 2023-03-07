@@ -21,36 +21,51 @@
     PROFILE
   <% end %>
 </div>
-<h1> <%= @winter_sport.name %> </h1>
-<div class="d-flex">
-  <div>
-    <%= cl_image_tag @winter_sport.photo.key, height:300, width: 300, crop: :fill %>
-  </div>
-  <% minutes = @winter_sport.time.to_i.divmod(60) %>
-  <% hours = minutes[0].divmod(60) %>
-  <% if hours[0] == 0 %>
-    <% activity_time = "#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
-  <% else %>
-    <% activity_time = "#{hours[0]}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
-  <% end %>
-  <div>
-    <p> Name: <%= @winter_sport.name %> </p>
-    <p> Time: <%= activity_time %> </p>
-    <p> Distance: <%= @winter_sport.distance %> km </p>
-    <p> Ran with <%= @winter_sport.friends %> on <%= @winter_sport.date %> </p>
-  </div>
-  <div>
-    <p> Average speed: <%= @winter_sport.avg_speed %> km/h</p>
-    <p> Maximum speed: <%= @winter_sport.max_speed %> km/h </p>
-    <p> Average heart rate: <%= @winter_sport.avg_heart_rate %> Bpm </p>
-    <p> Maximum heart rate: <%= @winter_sport.max_heart_rate %> Bpm </p>
-    <p> Elevation gain: <%= @winter_sport.elevation_gain %> m </p>
-    <p> Maximum elevation: <%= @winter_sport.max_elevation %> m </p>
+<div class="my-body-show">
+  <div class="my-container-show">
+    <div class="activity-card-show">
+      <% minutes = @winter_sport.time.to_i.divmod(60) %>
+      <% hours = minutes[0].divmod(60) %>
+      <% if hours[0] == 0 %>
+        <% activity_time = "#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+      <% else %>
+        <% activity_time = "#{hours[0]}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+      <% end %>
+      <div class="activity-card-show-info">
+        <div class="activity-card-show-info-picture">
+          <%= cl_image_tag @winter_sport.photo.key, height:400, width: 400, crop: :fill %>
+        </div>
+        <div class="activity-card-show-info-text-one">
+          <div class="text"> Name: <%= @winter_sport.name %> </div>
+          <div class="text"> Time: <%= activity_time %> </div>
+          <div class="text"> Distance: <%= @winter_sport.distance %> km </div>
+          <div class="text"> Date: <%= @winter_sport.date %> km </div>
+          <% if @winter_sport.friends == "" %>
+            <div class="text"> Activity alone </div>
+          <% else %>
+            <div class="text"> Activity with: <%= @winter_sport.friends %> </div>
+          <% end %>
+          <div class="text"> Elevation gain: <%= @winter_sport.elevation_gain %> m </div>
+        </div>
+        <div class="activity-card-show-info-text-two">
+          <div class="text"> Maximum elevation: <%= @winter_sport.max_elevation %> m </div>
+          <div class="text"> Average speed: <%= @winter_sport.avg_speed %> km/h</div>
+          <div class="text"> Maximum speed: <%= @winter_sport.max_speed %> km/h </div>
+          <div class="text"> Average heart rate: <%= @winter_sport.avg_heart_rate %> Bpm </div>
+          <div class="text"> Maximum heart rate: <%= @winter_sport.max_heart_rate %> Bpm </div>
+        </div>
+      </div>
+      <%= link_to edit_activity_list_winter_sport_path(@activity_list, @winter_sport), class:"edit-activity" do %>
+        <i class="fa-regular fa-pen-to-square"></i>
+      <% end %>
+    </div>
   </div>
 </div>
-<%= link_to edit_activity_list_winter_sport_path(@activity_list, @winter_sport) do %>
-  EDIT
-<% end %>
-<%= link_to activity_list_path(@activity_list) do %>
-  go back in time
-<% end %>
+<div class="my-footer">
+  <%= link_to activity_list_path(@activity_list), class:"my-footer-app-name" do %>
+    SPORT CALENDAR
+  <% end %>
+  <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class:"my-footer-log-out" do %>
+    LOG OUT
+  <% end %>
+</div>

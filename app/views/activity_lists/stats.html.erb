@@ -21,6 +21,65 @@
     PROFILE
   <% end %>
 </div>
-
-
-<%= cl_image_tag current_user.photo.key, height:300, width: 300, crop: :fill %>
+<div class="profile-body">
+  <div class="profile-container">
+    <div class="profile-block">
+      <div class="profile-block-info">
+        <div class="profile-block-info-picture">
+          <%= cl_image_tag current_user.photo.key, height:300, width: 300, crop: :fill, id:"stats_picture" %>
+        </div>
+        <div class="profile-block-info-text">
+          <div class="profile-block-info-text-name">
+            <%= current_user.first_name %> <%= current_user.last_name %>
+          </div>
+          <div class="profile-block-info-text-content">
+            <div> Age: <%= current_user.age %> </div>
+            <div> Gender: <%= current_user.gender %> </div>
+          </div>
+          <div class="profile-block-info-text-content">
+            <div> Height: <%= current_user.height / 100.0 %>m </div>
+            <div> Weight: <%= current_user.weight %>kg </div>
+          </div>
+        </div>
+      </div>
+      <div class="profile-block-stats">
+        <div class="profile-block-stats-title"> Running </div>
+        <div class="profile-block-stats-content">
+          <%= render "activity_stats", stats: @running_stats %>
+        </div>
+      </div>
+      <div class="profile-block-stats">
+        <div class="profile-block-stats-title"> Winter Sport </div>
+        <div class="profile-block-stats-content">
+          <%= render "activity_stats", stats: @winter_sport_stats %>
+        </div>
+      </div>
+      <div class="profile-block-stats">
+        <div class="profile-block-stats-title"> Cycling </div>
+        <div class="profile-block-stats-content">
+          <%= render "activity_stats", stats: @cycling_stats %>
+        </div>
+      </div>
+      <div class="profile-block-stats">
+        <div class="profile-block-stats-title"> Swimming </div>
+        <div class="profile-block-stats-content">
+          <%= render "activity_stats", stats: @swimming_stats %>
+        </div>
+      </div>
+      <div class="profile-block-stats">
+        <div class="profile-block-stats-title"> Walking </div>
+        <div class="profile-block-stats-content">
+          <%= render "activity_stats", stats: @walking_stats %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="my-footer">
+  <%= link_to activity_list_path(@activity_list), class:"my-footer-app-name" do %>
+    SPORT CALENDAR
+  <% end %>
+  <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class:"my-footer-log-out" do %>
+    LOG OUT
+  <% end %>
+</div>

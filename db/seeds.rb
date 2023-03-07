@@ -27,31 +27,55 @@ rodrigue = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v16779386
 user1 = User.create(first_name: 'Benjamin',
                     last_name: 'Boulle',
                     email: 'boulle@gmail.com',
+                    age: 24,
+                    height: 184,
+                    weight: 74,
+                    gender: "Male",
                     password: 'azerty')
 
 user2 = User.create(first_name: 'Gideon',
                     last_name: 'Maydell',
                     email: 'gideon@maydell.at',
+                    age: 24,
+                    height: 187,
+                    weight: 79,
+                    gender: "Male",
                     password: 'qwertz')
 
 user3 = User.create(first_name: 'Pedro',
                     last_name: 'Vilarinho',
                     email: 'pedro@gmail.com',
+                    age: 35,
+                    height: 178,
+                    weight: 74,
+                    gender: "Male",
                     password: 'azerty')
 
 user4 = User.create(first_name: 'Charlotte',
                     last_name: 'Jadot',
                     email: 'charlotte@gmail.com',
+                    age: 21,
+                    height: 165,
+                    weight: 51,
+                    gender: "Female",
                     password: 'azerty')
 
 user5 = User.create(first_name: 'Lisa',
                     last_name: 'Hardiquest',
                     email: 'lisa@gmail.com',
+                    age: 21,
+                    height: 173,
+                    weight: 54,
+                    gender: "Female",
                     password: 'azerty')
 
 user6 = User.create(first_name: 'Rodrigue',
                     last_name: 'Bouhon',
                     email: 'rodrigue@gmail.com',
+                    age: 24,
+                    height: 178,
+                    weight: 71,
+                    gender: "Male",
                     password: 'azerty')
 
 user1.photo.attach(io: benjamin, filename: "benjamin.jpg", content_type: "image/jpeg")
@@ -73,49 +97,94 @@ activity_lists_user1 = ActivityList.create(user: user1)
 puts "creating Running activities"
 
 running1 = Running.create(name: "Home 1.0",
-                          time: 6120,
-                          distance: 20.4,
-                          avg_speed: 12,
-                          avg_pace: 300,
+                          time: 5_240,
+                          distance: 16.4,
+                          avg_speed: 11.3,
+                          avg_pace: 320,
                           max_speed: 14.9,
-                          avg_heart_rate: 162,
+                          avg_heart_rate: 158,
                           max_heart_rate: 178,
                           friends: "Charlotte",
                           date: Date.today,
-                          elevation_gain: 44,
+                          elevation_gain: 210,
                           activity_list: activity_lists_user1)
 running1_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1677838999/running-longer-or-faster-31e97070bda14ffc8afdea52094504c7_nhkypf.jpg")
 running1.photo.attach(io: running1_pic, filename: "running1.jpg", content_type: "image/jpeg")
 
 running2 = Running.create(name: "Home 2.0",
-                          time: 7680,
-                          distance: 32,
-                          avg_speed: 15,
-                          avg_pace: 240,
-                          max_speed: 19,
-                          avg_heart_rate: 162,
-                          max_heart_rate: 178,
-                          friends: "Lisa",
-                          date: Date.today - 3,
-                          elevation_gain: 44,
+                          time: 3_250,
+                          distance: 10.88,
+                          avg_speed: 12.0,
+                          avg_pace: 299,
+                          max_speed: 14.2,
+                          avg_heart_rate: 164,
+                          max_heart_rate: 194,
+                          friends: "Charlotte",
+                          date: Date.today - 5,
+                          elevation_gain: 101,
                           activity_list: activity_lists_user1)
 running2_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1677839330/GettyImages-1138796856_azjpjr.jpg")
 running2.photo.attach(io: running2_pic, filename: "running2.jpg", content_type: "image/jpeg")
 
-running3 = Running.create(name: "Austria 1.0",
-                          time: 6673,
+running3 = Running.create(name: "Home 3.0",
+                          time: 6_673,
                           distance: 21.05,
                           avg_speed: 11.4,
                           avg_pace: 317,
                           max_speed: 13.3,
                           avg_heart_rate: 162,
                           max_heart_rate: 178,
-                          friends: "Pedro",
-                          date: Date.today,
+                          friends: "Lisa",
+                          date: Date.today - 4,
                           elevation_gain: 44,
                           activity_list: activity_lists_user1)
-running3_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1677839329/dkx264_e25m3g.jpg")
+running3_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678205676/priroda-devushka-beg-sport_wlinb3.jpg")
 running3.photo.attach(io: running3_pic, filename: "running3.jpg", content_type: "image/jpeg")
+
+running4 = Running.create(name: "Home 4.0",
+                          time: 4_714,
+                          distance: 15.48,
+                          avg_speed: 11.8,
+                          avg_pace: 305,
+                          max_speed: 16.2,
+                          avg_heart_rate: 167,
+                          max_heart_rate: 189,
+                          friends: "Lisa",
+                          date: Date.today - 10,
+                          elevation_gain: 139,
+                          activity_list: activity_lists_user1)
+running4_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678204360/photo-1502224562085-639556652f33_a3kwvx.jpg")
+running4.photo.attach(io: running4_pic, filename: "running4.jpg", content_type: "image/jpeg")
+
+running5 = Running.create(name: "Home 5.0",
+                          time: 3_968,
+                          distance: 13.02,
+                          avg_speed: 11.8,
+                          avg_pace: 305,
+                          max_speed: 12.9,
+                          avg_heart_rate: 159,
+                          max_heart_rate: 177,
+                          friends: "Lisa",
+                          date: Date.today - 12,
+                          elevation_gain: 109,
+                          activity_list: activity_lists_user1)
+running5_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678204360/5547139_yt2kfk.jpg")
+running5.photo.attach(io: running5_pic, filename: "running5.jpg", content_type: "image/jpeg")
+
+running6 = Running.create(name: "Home 6.0",
+                          time: 5_240,
+                          distance: 16.40,
+                          avg_speed: 11.3,
+                          avg_pace: 320,
+                          max_speed: 14.9,
+                          avg_heart_rate: 158,
+                          max_heart_rate: 178,
+                          friends: "Lisa",
+                          date: Date.today - 15,
+                          elevation_gain: 210,
+                          activity_list: activity_lists_user1)
+running6_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678204360/running-191001_edeijj.jpg")
+running6.photo.attach(io: running6_pic, filename: "running6.jpg", content_type: "image/jpeg")
 
 puts "creating Wintersport activities"
 
@@ -129,9 +198,9 @@ winter_sport1 = WinterSport.create(name: "Meribel 1.0",
                                    max_elevation: 3_154,
                                    elevation_gain: 18_965,
                                    friends: "Charlotte",
-                                   date: Date.today - 10,
+                                   date: Date.today - 6,
                                    activity_list: activity_lists_user1)
-winter_sport1_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678094490/snowboard-wallpaper-6_mkkyg0.jpg")
+winter_sport1_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678203219/647383_lhgtps.jpg")
 winter_sport1.photo.attach(io: winter_sport1_pic, filename: "winter_sport1.jpg", content_type: "image/jpeg")
 
 winter_sport2 = WinterSport.create(name: "Meribel 2.0",
@@ -148,6 +217,51 @@ winter_sport2 = WinterSport.create(name: "Meribel 2.0",
                                    activity_list: activity_lists_user1)
 winter_sport2_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678033255/Snowboard_pow_oje9ex.jpg")
 winter_sport2.photo.attach(io: winter_sport2_pic, filename: "winter_sport2.jpg", content_type: "image/jpeg")
+
+winter_sport3 = WinterSport.create(name: "Meribel 3.0",
+                                   time: 21_357,
+                                   distance: 108.54,
+                                   avg_speed: 22.7,
+                                   max_speed: 97.1,
+                                   avg_heart_rate: 86,
+                                   max_heart_rate: 118,
+                                   max_elevation: 3_174,
+                                   elevation_gain: 12_000,
+                                   friends: "Charlotte",
+                                   date: Date.today - 10,
+                                   activity_list: activity_lists_user1)
+winter_sport3_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678094490/snowboard-wallpaper-6_mkkyg0.jpg")
+winter_sport3.photo.attach(io: winter_sport3_pic, filename: "winter_sport3.jpg", content_type: "image/jpeg")
+
+winter_sport4 = WinterSport.create(name: "Meribel 4.0",
+                                   time: 21_961,
+                                   distance: 107.39,
+                                   avg_speed: 20.4,
+                                   max_speed: 95.1,
+                                   avg_heart_rate: 84,
+                                   max_heart_rate: 113,
+                                   max_elevation: 3_201,
+                                   elevation_gain: 11_972,
+                                   friends: "Charlotte",
+                                   date: Date.today - 13,
+                                   activity_list: activity_lists_user1)
+winter_sport4_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678203646/Screenshot_2023-03-07_at_15.42.31_nq69ij.png")
+winter_sport4.photo.attach(io: winter_sport4_pic, filename: "winter_sport4.jpg", content_type: "image/jpeg")
+
+winter_sport5 = WinterSport.create(name: "Meribel 5.0",
+                                   time: 21_686,
+                                   distance: 101.55,
+                                   avg_speed: 20.6,
+                                   max_speed: 92.1,
+                                   avg_heart_rate: 84,
+                                   max_heart_rate: 113,
+                                   max_elevation: 3_152,
+                                   elevation_gain: 11_268,
+                                   friends: "Charlotte",
+                                   date: Date.today - 12,
+                                   activity_list: activity_lists_user1)
+winter_sport5_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678204259/Screenshot_2023-03-07_at_16.50.52_n2qirx.png")
+winter_sport5.photo.attach(io: winter_sport5_pic, filename: "winter_sport5.jpg", content_type: "image/jpeg")
 
 puts "creating Cycling activities"
 

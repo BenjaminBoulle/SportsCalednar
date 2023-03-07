@@ -1,0 +1,94 @@
+.my-body-show {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(251, 240, 226);
+
+}
+
+.my-container-show {
+  justify-content: center;
+  // border: 2px solid crimson;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // background-image: url(running_guy.png);
+  background-color: rgb(251, 240, 226);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.activity-card-show {
+  margin: 15px 20px;
+  display: flex;
+  // border: 3px solid rgb(16, 16, 85);
+  border-radius: 3px;
+  // padding: 5px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  // background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),url("https://images.unsplash.com/photo-1495214783159-3503fd1b572d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+  background: linear-gradient(rgba(255, 233, 206,0.3), 50% ,rgb(0, 255, 4)) ;
+}
+
+.activity-card-show .activity-card-show-info {
+  display: flex;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  // width: 460px;
+}
+
+.activity-card-show .activity-card-show-info .activity-card-show-info-text-one, .activity-card-show-info-text-two {
+  font-variant: small-caps;
+  text-decoration: none;
+  padding-left: 30px;
+  padding-top: 15px;
+  // padding-left: 30px;
+ }
+
+ a {
+  text-decoration: none;
+  font-variant: small-caps;
+}
+
+.activity-card-show-info .activity-card-show-info-picture {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.activity-card-show-info .text {
+  font-size: 20px;
+  color: rgb(16, 16, 85);
+  padding-top: 17px;
+  padding-bottom: 5px;
+}
+
+.edit-activity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgb(16, 16, 85);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: rgb(16, 16, 85);
+  text-decoration: none;
+  transform: translate(17px, -17px);
+  background-color: rgb(0, 255, 4);
+  opacity: 0.7;
+  // background-color: rgb(216,222,224);
+  // height: 150px;
+  // width: 140px;
+  // align-items: center;
+  // border-radius: 20px;
+  // position: absolute;
+  // right: 16px;
+  // top: -20px;
+  // width: 40px;
+}
+
+.edit-activity:hover {
+  color: rgb(16, 16, 85);
+  // transform: scale(1.1);
+}

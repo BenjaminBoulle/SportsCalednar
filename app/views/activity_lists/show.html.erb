@@ -77,3 +77,11 @@
     <% end %>
   </div>
 </div>
+<div class="my-footer">
+  <%= link_to activity_list_path(@activity_list), class:"my-footer-app-name" do %>
+    SPORT CALENDAR
+  <% end %>
+  <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class:"my-footer-log-out" do %>
+    LOG OUT
+  <% end %>
+</div>

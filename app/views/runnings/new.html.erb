@@ -1,21 +1,26 @@
-<%= link_to activity_list_path(@activity_list) do %>
-    ALL
-<% end %>
-<%= link_to activity_list_runnings_path(@activity_list) do %>
-  RUNNING
-<% end %>
-<%= link_to activity_list_winter_sports_path(@activity_list) do %>
-  WINTER SPORT
-<% end %>
-<%= link_to activity_list_cyclings_path(@activity_list) do %>
-  CYCLING
-<% end %>
-<%= link_to activity_list_swimmings_path(@activity_list) do %>
-  SWIMMING
-<% end %>
-<%= link_to activity_list_walkings_path(@activity_list) do %>
-  WALKING
-<% end %>
+<div class="my-navbar">
+  <%= link_to activity_list_path(@activity_list), class:"my-navbar-box" do %>
+      ALL
+  <% end %>
+  <%= link_to activity_list_runnings_path(@activity_list), class:"my-navbar-box-current" do %>
+    RUNNING
+  <% end %>
+  <%= link_to activity_list_winter_sports_path(@activity_list), class:"my-navbar-box" do %>
+    WINTER SPORT
+  <% end %>
+  <%= link_to activity_list_cyclings_path(@activity_list), class:"my-navbar-box" do %>
+    CYCLING
+  <% end %>
+  <%= link_to activity_list_swimmings_path(@activity_list), class:"my-navbar-box" do %>
+    SWIMMING
+  <% end %>
+  <%= link_to activity_list_walkings_path(@activity_list), class:"my-navbar-box" do %>
+    WALKING
+  <% end %>
+  <%= link_to coustom_path(@activity_list), class:"my-navbar-box" do %>
+    PROFILE
+  <% end %>
+</div>
 <%= simple_form_for [@activity_list, @running], data: { controller: 'flatpickr' } do |f| %>
   <%= f.input :name, placeholder: "Name", label: false %>
   <div class="d-flex">
@@ -45,3 +50,11 @@
 <% end %>
 
  <%# as: :string, input_html: { data: { flatpickr_target: "activityDate" } },placeholder: "Date", label:false %>
+<div class="my-footer">
+  <%= link_to activity_list_path(@activity_list), class:"my-footer-app-name" do %>
+    SPORT CALENDAR
+  <% end %>
+  <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class:"my-footer-log-out" do %>
+    LOG OUT
+  <% end %>
+</div>

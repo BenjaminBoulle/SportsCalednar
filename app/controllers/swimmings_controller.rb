@@ -1,3 +1,4 @@
+require "open-uri"
 class SwimmingsController < ApplicationController
   def index
     @swimmings = Swimming.where(activity_list: params[:activity_list_id]).order(date: :desc).order(name: :asc)

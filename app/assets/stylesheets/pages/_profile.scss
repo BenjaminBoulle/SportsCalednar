@@ -1,0 +1,116 @@
+.profile-body {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(251, 240, 226);
+}
+
+.profile-container {
+  justify-content: center;
+  // border: 2px solid crimson;
+  // padding-left: 20px;
+  // padding-right: 20px;
+  // padding-top: 20px;
+  // padding-bottom: 20px;
+  padding: 20px;
+  // background-image: url(running_guy.png);
+  background-color: rgb(251, 240, 226);
+  // background-size: cover;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  // width: 80%;
+}
+
+.profile-block {
+  // border: 2px solid crimson;
+  background-color: rgb(251, 240, 226);
+  // padding: 5px;
+  background: linear-gradient(rgba(255, 233, 206,0.3), 50% ,rgb(0, 255, 4)) ;
+  // border-radius: 5px;
+
+  // width: 100%;
+}
+
+.profile-block .profile-block-info {
+  // border: 2px solid crimson;
+  display: flex;
+  // border-top-left-radius: 5px;
+  // border-top-right-radius: 5px;
+}
+
+.profile-block .profile-block-info .profile-block-info-picture {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+// #stats_picture {
+//   border-top-left-radius: 5px;
+// }
+
+.profile-block .profile-block-info .profile-block-info-text {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 500px;
+  color: rgb(16, 16, 85);
+  // border: 5px solid lime;
+}
+
+.profile-block .profile-block-info .profile-block-info-text .profile-block-info-text-name {
+  font-variant: small-caps;
+  font-size: 40px;
+  color: rgb(16, 16, 85);
+  font-weight: bold;
+}
+
+.profile-block .profile-block-info .profile-block-info-text .profile-block-info-text-content{
+  display: flex;
+  font-variant: small-caps;
+  justify-content: space-between;
+  font-size: 30px;
+  color: rgb(16, 16, 85);
+}
+
+.profile-block .profile-block-stats {
+  // border: 2px solid crimson;
+  padding: 5px;
+  margin: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+.profile-block .profile-block-stats .profile-block-stats-title {
+  // border: 2px solid rgb(137, 20, 220);
+  font-size: 20px;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: rgb(16, 16, 85);
+}
+
+.profile-block .profile-block-stats .profile-block-stats-content {
+  // border: 2px solid rgb(255, 230, 0);
+  font-variant: small-caps;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile-block .profile-block-stats .profile-block-stats-content .profile-block-stats-content-distance {
+  // border: 2px dotted rgb(255, 0, 0);
+  font-size: 17px;
+  color: rgb(16, 16, 85);
+}
+
+.profile-block .profile-block-stats .profile-block-stats-content .profile-block-stats-content-time {
+  // border: 2px dotted rgb(255, 0, 0);
+  font-size: 17px;
+  color: rgb(16, 16, 85);
+}
+
+.profile-block .profile-block-stats .profile-block-stats-content .profile-block-stats-content-nb {
+  // border: 2px dotted rgb(255, 0, 0);
+  font-size: 17px;
+  color: rgb(16, 16, 85);
+}

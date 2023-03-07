@@ -1,3 +1,4 @@
+require "open-uri"
 class WalkingsController < ApplicationController
   def index
     @walkings = Walking.where(activity_list: params[:activity_list_id]).order(date: :desc).order(name: :desc)
@@ -77,6 +78,7 @@ class WalkingsController < ApplicationController
                                     :date,
                                     :time,
                                     :elevation_gain,
+                                    :max_elevation,
                                     :photo)
   end
 end

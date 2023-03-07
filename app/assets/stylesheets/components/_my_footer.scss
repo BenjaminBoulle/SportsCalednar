@@ -1,0 +1,42 @@
+.my-footer {
+  display: flex;
+  justify-content: space-between;
+  // margin: 0 15px;
+  height: 100px;
+  background-color: rgb(16, 16, 85);
+}
+
+.my-footer a {
+  color: rgb(0, 255, 4);
+}
+
+.my-footer .my-footer-log-out {
+  color: rgb(0, 255, 4);
+  border: 3px solid rgb(0, 255, 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  margin-right: 100px;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.my-footer .my-footer-log-out:hover {
+  // background-color: rgb(0, 255, 4);
+  background-color: rgb(255, 0, 0);
+  border: 3px solid rgb(255, 0, 0);
+  color: rgb(16, 16, 85);
+}
+
+.my-footer .my-footer-app-name {
+  // border: 2px solid crimson;
+  color: rgb(0, 255, 4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  margin-left: 100px;
+  font-size: xx-large;
+  font-variant: small-caps;
+}

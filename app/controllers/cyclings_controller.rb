@@ -1,3 +1,4 @@
+require "open-uri"
 class CyclingsController < ApplicationController
   def index
     @cyclings = Cycling.where(activity_list: params[:activity_list_id]).order(date: :desc).order(name: :desc)

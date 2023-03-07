@@ -1,0 +1,19 @@
+<% minutes = stats[1].divmod(60) %>
+<% hours = minutes[0].divmod(60) %>
+<% days = hours[0].divmod(24) %>
+<% if hours[0] == 0 %>
+  <% activity_time = "#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+<% elsif days[0] == 0 %>
+  <% activity_time = "#{hours[0]}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+<% else %>
+  <% activity_time = "#{days[0]}:#{format('%02d', days[1])}:#{format('%02d', hours[1])}:#{format('%02d', minutes[1])}" %>
+<% end %>
+<div class="profile-block-stats-content-distance">
+  Total Distance: <%= stats[0].round(2) %> km
+</div>
+<div class="profile-block-stats-content-time">
+  Total Time: <%= activity_time %>
+</div>
+<div class="profile-block-stats-content-nb">
+  Total Activities: <%= stats[2] %>
+</div>
