@@ -295,6 +295,51 @@ cycling2 = Cycling.create(name: "La Croix 2.0",
 cycling2_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678095657/I0708-Vnord-dav_2314_qxpc4x.jpg")
 cycling2.photo.attach(io: cycling2_pic, filename: "cycling2.jpg", content_type: "image/jpeg")
 
+cycling3 = Cycling.create(name: "La Croix 3.0",
+                          time: 16_307,
+                          distance: 97.8,
+                          avg_speed: 21.6,
+                          max_speed: 63.3,
+                          avg_heart_rate: 139,
+                          max_heart_rate: 177,
+                          max_elevation: 614,
+                          elevation_gain: 2_073,
+                          friends: "Lisa",
+                          date: Date.today - 20,
+                          activity_list: activity_lists_user1)
+cycling3_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678220417/wp10051368_gaiuio.jpg")
+cycling3.photo.attach(io: cycling3_pic, filename: "cycling3.jpg", content_type: "image/jpeg")
+
+cycling4 = Cycling.create(name: "La Croix 4.0",
+                          time: 3_870,
+                          distance: 38.83,
+                          avg_speed: 36.1,
+                          max_speed: 56.2,
+                          avg_heart_rate: 139,
+                          max_heart_rate: 177,
+                          max_elevation: 368,
+                          elevation_gain: 58,
+                          friends: "Charlotte",
+                          date: Date.today - 6,
+                          activity_list: activity_lists_user1)
+cycling4_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678220417/4259743_akwdbr.jpg")
+cycling4.photo.attach(io: cycling4_pic, filename: "cycling4.jpg", content_type: "image/jpeg")
+
+cycling5 = Cycling.create(name: "La Croix 5.0",
+                          time: 12_131,
+                          distance: 86.23,
+                          avg_speed: 25.6,
+                          max_speed: 56.2,
+                          avg_heart_rate: 139,
+                          max_heart_rate: 177,
+                          max_elevation: 116,
+                          elevation_gain: 655,
+                          friends: "Charlotte",
+                          date: Date.today,
+                          activity_list: activity_lists_user1)
+cycling5_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678220417/Bicycle-Background-Full-HD_oy2mzo.jpg")
+cycling5.photo.attach(io: cycling5_pic, filename: "cycling5.jpg", content_type: "image/jpeg")
+
 puts "creating Swimming activities"
 
 swimming1 = Swimming.create(name: "Piscine 1.0",
@@ -327,9 +372,24 @@ swimming2 = Swimming.create(name: "Piscine 2.0",
 swimming2_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678096353/312376_ueuqwm.jpg")
 swimming2.photo.attach(io: swimming2_pic, filename: "swimming2.jpg", content_type: "image/jpeg")
 
+swimming3 = Swimming.create(name: "Piscine 3.0",
+                            time: 1657,
+                            distance: 1.650,
+                            avg_speed: 1,
+                            avg_pace: 100,
+                            max_speed: 14.4,
+                            avg_heart_rate: 129,
+                            max_heart_rate: 157,
+                            friends: "Lisa",
+                            date: Date.today - 1,
+                            total_strokes: 33,
+                            activity_list: activity_lists_user1)
+swimming3_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678220417/plavanie-pryzhok-bryzgi_achvvb.jpg")
+swimming3.photo.attach(io: swimming3_pic, filename: "swimming3.jpg", content_type: "image/jpeg")
+
 puts "creating Walking activities"
 
-running1 = Walking.create(name: "Mountain 1.0",
+walking1 = Walking.create(name: "Mountain 1.0",
                           time: 23_443,
                           distance: 32.6,
                           avg_speed: 5,
@@ -341,10 +401,10 @@ running1 = Walking.create(name: "Mountain 1.0",
                           date: Date.today - 29,
                           elevation_gain: 7890,
                           activity_list: activity_lists_user1)
-running1_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678097466/photo-1483728642387-6c3bdd6c93e5_dxzb3l.jpg")
-running1.photo.attach(io: running1_pic, filename: "running1.jpg", content_type: "image/jpeg")
+walking1_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678097466/photo-1483728642387-6c3bdd6c93e5_dxzb3l.jpg")
+walking1.photo.attach(io: walking1_pic, filename: "walking1.jpg", content_type: "image/jpeg")
 
-running2 = Walking.create(name: "Mountain 2.0",
+walking2 = Walking.create(name: "Mountain 2.0",
                           time: 19_443,
                           distance: 23.58,
                           avg_speed: 4.37,
@@ -353,8 +413,23 @@ running2 = Walking.create(name: "Mountain 2.0",
                           avg_heart_rate: 134,
                           max_heart_rate: 198,
                           friends: "Lisa",
-                          date: Date.today - 3,
+                          date: Date.today - 25,
                           elevation_gain: 6789,
                           activity_list: activity_lists_user1)
-running2_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678097467/A-Alamy-BXWK5E_vvmkuf_zzxojz.webp")
-running2.photo.attach(io: running2_pic, filename: "running2.jpg", content_type: "image/jpeg")
+walking2_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678097467/A-Alamy-BXWK5E_vvmkuf_zzxojz.webp")
+walking2.photo.attach(io: walking2_pic, filename: "walking2.jpg", content_type: "image/jpeg")
+
+walking3 = Walking.create(name: "Mountain 3.0",
+                          time: 19_443,
+                          distance: 23.58,
+                          avg_speed: 4.37,
+                          avg_pace: 824,
+                          max_speed: 11,
+                          avg_heart_rate: 134,
+                          max_heart_rate: 198,
+                          friends: "Lisa",
+                          date: Date.today - 2,
+                          elevation_gain: 6789,
+                          activity_list: activity_lists_user1)
+walking3_pic = URI.open("https://res.cloudinary.com/dlvtxz1vv/image/upload/v1678220417/somalaya-mountain-range-title_ztcxmm.jpg")
+walking3.photo.attach(io: walking3_pic, filename: "walking3.jpg", content_type: "image/jpeg")
